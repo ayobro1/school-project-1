@@ -1,1 +1,1 @@
-# school-project
+this is my school project for my website
