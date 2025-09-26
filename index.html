@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Page Glassmorphism</title>
+
+
+  <script data-ad-client="ca-pub-7834471188965436" async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+ 
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <style>
+    body{margin:0;min-height:100vh;background:url('https://images.unsplash.com/photo-1535408190508-be4c21946da6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDc3NTcyOTB8&ixlib=rb-4.1.0&q=85') no-repeat center/cover;font-family:Arial,sans-serif}
+    .landing-container{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh;padding-top:60px;gap:24px}
+    .glass{background:rgba(255,255,255,.15);border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,.1);backdrop-filter:blur(5.6px);-webkit-backdrop-filter:blur(5.6px);border:1px solid rgba(255,255,255,.2);color:#fff;padding:32px 40px;text-align:center;max-width:480px;margin-bottom:0}
+    h1{font-size:2.5rem;margin-bottom:12px;color:#fff}
+    p{font-size:1.2rem;color:#fff}
+    button{cursor:pointer;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:8px;color:#fff;font-size:1rem;padding:12px 32px;margin-top:16px;transition:background .2s}
+    button:hover{background:rgba(255,255,255,.25)}
+  </style>
+</head>
+<body>
+
+  <div id="g_id_onload"
+       data-client_id="529118483287-8r7ibvq1eg0080b78bbr12o7nph67sod.apps.googleusercontent.com"
+       data-callback="handleCredentialResponse">
+  </div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-shape="rectangular"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-size="large">
+  </div>
+
+  
+  <div class="landing-container">
+    <div class="glass">
+      <h1>Nolans 3d prints</h1>
+      <p>we do all sorts of neat things here!</p>
+      <a href="page2.html"><button>go on a shopping spree!!</button></a>
+    </div>
+  </div>
+
+  <script>
+    function handleCredentialResponse(response) {
+      const data = JSON.parse(atob(response.credential.split('.')[1]));
+      console.log("Signed in user info:", data);
+      document.body.innerHTML += `<p>Signed in as ${data.name} (${data.email})</p>`;
+    }
+  </script>
+</body>
+</html>
